@@ -1,9 +1,11 @@
 {
 	"scripts": {
 		"start": "serverless invoke local --function matches",
-		"tslint": "tslint -c tslint.json '*.ts'",
-    "tslint-fix": "tslint --fix -c tslint.json '*.ts'",
-		"prettify": "prettier --write --ignore-path .gitignore \"*.ts\""
+		"deploy": "sls deploy",
+		"package": "sls package",
+		"tslint": "tslint -c tslint.json 'src/**/*.ts' '*.ts'",
+    "tslint-fix": "tslint --fix -c tslint.json 'src/**/*.ts' '*.ts'",
+		"prettify": "prettier --write --ignore-path .gitignore \"src\" \"*.ts\""
 	},
   "devDependencies": {
     "@serverless/eslint-config": "^5.0.1",
