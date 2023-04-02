@@ -1,9 +1,11 @@
 {
   "devDependencies": {
+    "@serverless/eslint-config": "^5.0.1",
     "eslint": "^8.37.0",
     "eslint-plugin-import": "^2.27.5",
     "git-list-updated": "^1.2.1",
     "prettier": "^2.8.7",
+    "serverless-plugin-typescript": "^2.1.4",
     "ts-lint": "^4.5.1",
     "typescript": "^5.0.3"
   },
