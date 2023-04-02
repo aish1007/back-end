@@ -3,6 +3,7 @@
 		"start": "serverless invoke local --function matches",
 		"deploy": "sls deploy",
 		"package": "sls package",
+		"fetch-item-images":"node src/scripts/getAssets.ts",
 		"tslint": "tslint -c tslint.json 'src/**/*.ts' '*.ts'",
     "tslint-fix": "tslint --fix -c tslint.json 'src/**/*.ts' '*.ts'",
 		"prettify": "prettier --write --ignore-path .gitignore \"src\" \"*.ts\""
