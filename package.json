@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "eslint-plugin-import": "^2.27.5",
+    "git-list-updated": "^1.2.1",
+    "prettier": "^2.8.7",
+    "ts-lint": "^4.5.1",
+    "typescript": "^5.0.3"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1348.0",
+    "leaguejs": "^2.3.1"
+  },
+  "name": "recent-matches"
+}
