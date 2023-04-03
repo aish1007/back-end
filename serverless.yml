@@ -37,6 +37,7 @@ provider:
 functions:
   matches:
     handler: handler.matches
+    timeout: 300
     events:
       - httpApi:
           path: /recent-matches/{summonerName}
