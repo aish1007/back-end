@@ -43,7 +43,7 @@ const formatMatchStats = (
       item6,
     } = summonerMatchInfo[0];
 
-    const profileImg = `https://ddragon.leagueoflegends.com/cdn/13.6.1/img/profileicon/${profileIcon}`;
+    const profileImg = `https://ddragon.leagueoflegends.com/cdn/13.6.1/img/profileicon/${profileIcon}.png`;
     const items = [item0, item1, item2, item3, item4, item5, item6];
     const itemsPurchased = items
       .map((item) => {
@@ -52,7 +52,7 @@ const formatMatchStats = (
           if (itemInfo?.name || itemInfo?.image) {
             return {
               name: itemInfo.name!,
-              img: `https://ddragon.leagueoflegends.com/cdn/13.6.1/img/item/${itemInfo.image.full}.png`,
+              img: `https://ddragon.leagueoflegends.com/cdn/13.6.1/img/item/${itemInfo.image.full}`,
             };
           }
         }
