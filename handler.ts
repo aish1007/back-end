@@ -1,16 +1,36 @@
-module.exports.matches = async (event) => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: "Go Serverless v1.0! Your function executed successfully!",
-        input: event,
-      },
-      null,
-      2
-    ),
-  };
+import { getLastFiveMatches } from "./src/controller/Match";
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
+module.exports.matches = async (event) => {
+  const { summonerName } = event.pathParameters;
+  const envName = process.env["GAME_ENV"]!;
+  let responseObject = {};
+
+  try {
+    const matchHistory = await getLastFiveMatches(summonerName, envName);
+
+    if (matchHistory.length > 0) {
+      responseObject = {
+        statusCode: 200,
+        body: JSON.stringify({
+          matches: matchHistory,
+        }),
+      };
+    } else {
+      responseObject = {
+        statusCode: 200,
+        body: JSON.stringify({
+          matches: [],
+          message: `No match history found for ${summonerName}`,
+        }),
+      };
+    }
+  } catch (error) {
+    console.log("Error!!!", error);
+    responseObject = {
+      statusCode: 500,
+      body: JSON.stringify(error),
+    };
+  }
+
+  return responseObject;
 };
