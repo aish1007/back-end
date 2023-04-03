@@ -1,13 +1,13 @@
 {
-	"scripts": {
-		"start": "serverless invoke local --function matches",
-		"deploy": "sls deploy",
-		"package": "sls package",
-		"fetch-item-images":"node src/scripts/getAssets.ts",
-		"tslint": "tslint -c tslint.json 'src/**/*.ts' '*.ts'",
+  "scripts": {
+    "start": "serverless invoke local --function matches",
+	"deploy": "sls deploy",
+	"package": "sls package",
+	"fetch-item-images":"node src/scripts/getAssets.ts",
+	"tslint": "tslint -c tslint.json 'src/**/*.ts' '*.ts'",
     "tslint-fix": "tslint --fix -c tslint.json 'src/**/*.ts' '*.ts'",
-		"prettify": "prettier --write --ignore-path .gitignore \"src\" \"*.ts\""
-	},
+    "prettify": "prettier --write --ignore-path .gitignore \"src\" \"*.ts\""
+  },
   "devDependencies": {
     "@serverless/eslint-config": "^5.0.1",
     "eslint": "^8.37.0",
@@ -18,9 +18,9 @@
     "ts-lint": "^4.5.1",
     "typescript": "^5.0.3"
   },
-	"eslintConfig": {
-    "extends": "@serverless/eslint-config/node",
-    "root": true
+   "eslintConfig": {
+	"extends": "@serverless/eslint-config/node",
+	"root": true
   },
   "dependencies": {
     "aws-sdk": "^2.1348.0",
