@@ -8,7 +8,7 @@ export const getLastFiveMatches = async (
   envName: string
 ): Promise<MatchStatistics[]> => {
   const summoner = await getSummonerInfoByName(summonerName, envName);
-  const recentMatches = await getRecentMatches(summoner.puuid, envName);
+  const recentMatches = await getRecentMatches(summoner.puuid, envName,4);
   if (recentMatches.matches.length > 0) {
     const sortedMatches = recentMatches.matches.sort((match1, match2) => {
       const match1DateString = new Date(match1.info.gameStartTimestamp);

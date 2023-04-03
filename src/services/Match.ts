@@ -9,11 +9,13 @@ const leagueJs = new LeagueJS(RIOT_API_KEY, {
 
 export const getRecentMatches = async (
   playerId: string,
-  envName: string
+  envName: string,
+  endIndex: number
 ): Promise<MatchList> => {
   const options = {
-    endIndex: 5,
+   ...{endIndex}
   };
+
   const matchList = await leagueJs.Match.gettingListByAccount(
     playerId,
     envName,
